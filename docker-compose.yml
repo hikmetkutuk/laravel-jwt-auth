@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15.5
+    container_name: laravel-jwt-db
+    environment:
+      POSTGRES_DB: jwt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_laravel:/var/lib/postgresql/data
+
+volumes:
+    postgres_data_laravel:

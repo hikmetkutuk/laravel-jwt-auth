@@ -5,6 +5,8 @@
 ![Laravel](https://img.shields.io/static/v1?&logo=laravel&label=laravel&message=11.7.0&color=ff2d20&style=for-the-badge)
 ![Postgres](https://img.shields.io/static/v1?&logo=postgresql&label=postgre%20sql&message=15.5&color=336791&style=for-the-badge)
 
+---
+
 - [x] Project setup
 - [ ] Db connection
 - [ ] Jwt install
