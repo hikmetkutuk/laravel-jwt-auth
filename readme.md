@@ -8,7 +8,7 @@
 ---
 
 - [x] Project setup
-- [ ] Db connection
+- [x] Db connection
 - [ ] Jwt install
 - [ ] Register
 - [ ] Login
