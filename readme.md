@@ -14,3 +14,12 @@
 - [ ] Login
 - [ ] Refresh token
 - [ ] Logout
+- [ ] Swagger documentation
+
+---
+
+``composer create-project laravel/laravel jwt-auth``
+
+``php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"``
+
+``php artisan jwt:secret``
