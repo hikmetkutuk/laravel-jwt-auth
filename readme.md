@@ -10,7 +10,7 @@
 - [x] Project setup
 - [x] Db connection
 - [x] Jwt install
-- [ ] Register
+- [x] Register
 - [ ] Login
 - [ ] Refresh token
 - [ ] Logout
@@ -25,3 +25,5 @@
 ``php artisan jwt:secret``
 
 ``php artisan make:controller AuthController``
+
+``php artisan install:api``
