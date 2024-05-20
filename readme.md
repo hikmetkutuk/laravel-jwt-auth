@@ -9,7 +9,7 @@
 
 - [x] Project setup
 - [x] Db connection
-- [ ] Jwt install
+- [x] Jwt install
 - [ ] Register
 - [ ] Login
 - [ ] Refresh token
