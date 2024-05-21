@@ -16,4 +16,5 @@ Route::group([
     "middleware" => ["auth:api"]
 ], function () {
     Route::get("profile", [AuthController::class, "profile"]);
+    Route::get("refresh", [AuthController::class, "refreshToken"]);
 });

@@ -12,7 +12,7 @@
 - [x] Jwt install
 - [x] Register
 - [x] Login
-- [ ] Refresh token
+- [x] Refresh token
 - [ ] Logout
 - [ ] Swagger documentation
 

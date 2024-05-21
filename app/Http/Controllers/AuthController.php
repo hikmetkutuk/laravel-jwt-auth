@@ -104,4 +104,23 @@ class AuthController extends Controller
             ], 500);
         }
     }
+
+    public function refreshToken(): JsonResponse
+    {
+        try {
+            $token = JWTAuth::parseToken()->refresh();
+
+            return response()->json([
+                "status" => true,
+                "message" => "New access token generated",
+                "data" => $token
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                "status" => false,
+                "message" => "Failed to refresh token",
+                "error" => $e->getMessage()
+            ], 500);
+        }
+    }
 }
