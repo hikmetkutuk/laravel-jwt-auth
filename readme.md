@@ -11,7 +11,7 @@
 - [x] Db connection
 - [x] Jwt install
 - [x] Register
-- [ ] Login
+- [x] Login
 - [ ] Refresh token
 - [ ] Logout
 - [ ] Swagger documentation

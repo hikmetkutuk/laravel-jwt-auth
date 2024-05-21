@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -43,6 +44,43 @@ class AuthController extends Controller
             return response()->json([
                 "status" => false,
                 "message" => "User creation failed",
+                "error" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            "email" => "required|email",
+            "password" => "required",
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                "status" => false,
+                "message" => "Validation errors",
+                "errors" => $validator->errors()
+            ], 422);
+        }
+
+        try {
+            if (!$token = JWTAuth::attempt($request->only('email', 'password'))) {
+                return response()->json([
+                    "status" => false,
+                    "message" => "Invalid login details"
+                ], 401);
+            }
+
+            return response()->json([
+                "status" => true,
+                "message" => "User logged in successfully",
+                "data" => $token
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                "status" => false,
+                "message" => "Could not create token",
                 "error" => $e->getMessage()
             ], 500);
         }
