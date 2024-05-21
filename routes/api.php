@@ -11,3 +11,9 @@ Route::get('/user', function (Request $request) {
 // auth routes
 Route::post("register", [AuthController::class, "register"]);
 Route::post("login", [AuthController::class, "login"]);
+
+Route::group([
+    "middleware" => ["auth:api"]
+], function () {
+    Route::get("profile", [AuthController::class, "profile"]);
+});

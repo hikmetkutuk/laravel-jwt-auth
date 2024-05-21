@@ -49,7 +49,7 @@ class AuthController extends Controller
         }
     }
 
-    public function login(Request $request)
+    public function login(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
             "email" => "required|email",
@@ -81,6 +81,25 @@ class AuthController extends Controller
             return response()->json([
                 "status" => false,
                 "message" => "Could not create token",
+                "error" => $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function profile(): JsonResponse
+    {
+        try {
+            $userData = auth()->user();
+
+            return response()->json([
+                "status" => true,
+                "message" => "User profile",
+                "data" => $userData
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                "status" => false,
+                "message" => "Failed to retrieve user profile",
                 "error" => $e->getMessage()
             ], 500);
         }
