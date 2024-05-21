@@ -14,7 +14,7 @@
 - [x] Login
 - [x] Refresh token
 - [x] Logout
-- [ ] Swagger documentation
+- [x] Swagger documentation
 - [ ] Roles & permissions
 
 ---
@@ -28,3 +28,9 @@
 ``php artisan make:controller AuthController``
 
 ``php artisan install:api``
+
+``composer require "darkaonline/l5-swagger"``
+
+``php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"``
+
+``php artisan l5-swagger:generate``
