@@ -13,8 +13,9 @@
 - [x] Register
 - [x] Login
 - [x] Refresh token
-- [ ] Logout
+- [x] Logout
 - [ ] Swagger documentation
+- [ ] Roles & permissions
 
 ---
 
